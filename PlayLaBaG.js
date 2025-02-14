@@ -1,5 +1,6 @@
 import { LaBaG } from './LaBaG.js'; 
 
+// 可遊玩的啦八機
 export class PlayLaBaG extends LaBaG{
     constructor(){
         super();

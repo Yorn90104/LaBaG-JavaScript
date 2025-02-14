@@ -1,5 +1,6 @@
 import { P } from './P.js'; 
 
+// 啦八機本體
 export class LaBaG{
     // 建構函數
     constructor(){ 
