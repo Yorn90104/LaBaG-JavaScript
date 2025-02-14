@@ -1,8 +1,9 @@
-const http = require("http");
-const server = http.createServer(function(req, res)
-{
-    res.write("HELLO");
-    res.end();
+import { PlayLaBaG } from "./PlayLaBaG.js";
+
+
+const Game = new PlayLaBaG();
+Game.Reset;
+while(Game.GameRunning()){
+    Game.Logic(); // 執行遊戲邏輯
 }
-);
-server.listen(8787);
+Game.GameOver(); // 遊戲結束
