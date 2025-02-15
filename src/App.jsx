@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import { PlayLaBaG } from './game/PlayLaBaG'
+import { PlayLaBaG } from '.\\game\\PlayLaBaG'
+import '.\\App.css'
 const Game = new PlayLaBaG();
 function BeginButton(){
 	return (
-		<button onClick={Game.Logic}>開始</button>
+		<button onClick={()=>Game.Logic()} id='BeginButton'/>
 	)
 }
 
