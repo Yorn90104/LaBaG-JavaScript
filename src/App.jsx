@@ -1,6 +1,5 @@
-import  PlayLaBaG  from '.\\game\\PlayLaBaG'
-import '.\\App.css'
-
+import  {PlayLaBaG}  from './game/PlayLaBaG.js'
+import './App.css'
 const Game = new PlayLaBaG();
 
 function BeginButton(){

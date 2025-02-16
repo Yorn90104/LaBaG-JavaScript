@@ -1,6 +1,6 @@
 #BeginButton{
 	width: 1080 px; height: 360 px;
-	background-image: url(".\\assets\\BeginPIC.jpg");
+	background-image: url("./assets/BeginPIC.jpg");
 	background-size: cover;
 	border: none;
 	cursor: pointer;
