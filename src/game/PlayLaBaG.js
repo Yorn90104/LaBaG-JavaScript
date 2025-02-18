@@ -1,7 +1,7 @@
 import { LaBaG } from './LaBaG.js'; 
 
 // 可遊玩的啦八機
-export class PlayLaBaG extends LaBaG{
+class PlayLaBaG extends LaBaG{
     constructor(){
         super();
         this.Name = "";
@@ -90,4 +90,5 @@ export class PlayLaBaG extends LaBaG{
         }
     }
 }
-
+const Game = new PlayLaBaG();
+export default Game;

@@ -1,12 +1,4 @@
-import  {PlayLaBaG}  from './game/PlayLaBaG.js'
-import './App.css'
-const Game = new PlayLaBaG();
-
-function BeginButton(){
-	return (
-		<button onClick={()=>Game.Logic()} id='BeginButton'/>
-	)
-}
+import BeginButton from './components/BeginButton'
 
 function App() {
 
