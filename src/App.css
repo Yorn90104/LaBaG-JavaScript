@@ -10,3 +10,15 @@ body{
     flex-direction: row;
     justify-content: center;
 }
+
+.Pictures{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* 確保圖片不會換行 */
+}
+
+.Pictures > img{
+    width: 150px;
+    height: 200px;
+}
