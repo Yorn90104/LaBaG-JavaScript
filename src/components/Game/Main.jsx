@@ -1,6 +1,9 @@
+import BackButton from "./BackButton";
+
 function Game({setScreen}){
     return (
         <>
+        <BackButton setScreen={setScreen}/>
         </>
     )
 }
