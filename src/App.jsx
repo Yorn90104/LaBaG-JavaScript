@@ -1,10 +1,12 @@
-import BeginButton from './components/BeginButton'
+import "./App.css"
+import Home from "./components/Home"
+
 
 function App() {
 
 	return (
 		<>
-			<BeginButton/>
+			<Home />
 		</>
 	)
 }

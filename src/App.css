@@ -1,0 +1,12 @@
+body{
+    background-image: url("./assets/BG.png");
+    background-size: cover; /* 讓圖片覆蓋整個畫面 */
+    background-position: center; /* 圖片置中 */
+    background-repeat: no-repeat; /* 不重複 */
+    background-attachment: fixed; /* 背景圖片固定不滾動 */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
