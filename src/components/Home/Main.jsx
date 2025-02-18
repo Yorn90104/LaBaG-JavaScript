@@ -1,7 +1,7 @@
 function Home({setScreen}){
   return (
     <>
-      <img src="/SuperCircle.png" alt="SuperCircle" onClick={() => {console.log("切換至 Home畫面");setScreen("Home")}}/>
+      <img src="/SuperCircle.png" alt="SuperCircle" onClick={() => {console.log("切換至 Game 畫面");setScreen("Game")}}/>
       <h1 style={{
         textAlign: "center",
         fontSize: "20px",
