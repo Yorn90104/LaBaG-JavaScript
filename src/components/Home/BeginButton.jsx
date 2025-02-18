@@ -1,11 +1,8 @@
-import  Game  from '../game/PlayLaBaG.js'
+import  Game  from '../../game/PlayLaBaG.js'
 
-
-function Begin(){
-    Game.Logic();
-}
-
+// 啦八機開始按鈕
 function BeginButton(){
+	const Begin = () => {Game.Logic();};
 	return (
 		<button style = {{
 			width: "1080px",
