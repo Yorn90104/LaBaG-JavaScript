@@ -54,22 +54,25 @@ function GameScreen({ setScreen }) {
     setButtonAble(false);
     setNowPictures(Array.from({ length: 3 }, () => QSTs[NowMode]));
     Game.Logic();
-    
-    for (let i = 0; i < 3; i++) {
-        setTimeout(() => {
-            setNowPictures((NowPictures) => {
-              const newPictures = [...NowPictures];
-              console.log(`更新位置 ${i} 的圖片`);
-              newPictures[i] = Pictures[Game.Ps[i].code];
-              return newPictures;
-            });
-          }, 500 * (i+1));
-    }
 
-    setNowMode(Game.NowMode());
-    setNowScore(Game.Score);
-    setNowTimes(Game.Times - Game.Played);
+    for (let i = 0; i < 3; i++) {
+      setTimeout(() => {
+        setNowPictures((NowPictures) => {
+          const newPictures = [...NowPictures];
+          console.log(`更新位置 ${i} 的圖片`);
+          newPictures[i] = Pictures[Game.Ps[i].code];
+          return newPictures;
+        });
+      }, 500 * (i + 1));
+    }
+    setTimeout(() => {
+      setNowMode(Game.NowMode());
+      setNowScore(Game.Score);
+      setNowTimes(Game.Times - Game.Played);
+    }, 3000);
+    setTimeout(() => {
     setButtonAble(true);
+    }, 3500);
   }
 
   return (
@@ -97,7 +100,7 @@ function GameScreen({ setScreen }) {
           <p style={{ color: "white", fontSize: "16pt" }}>
             <b>剩餘次數: {NowTimes}</b>
           </p>
-          <BeginButton Begin={Begin} Able = {ButtonAble}/>
+          <BeginButton Begin={Begin} Able={ButtonAble} />
         </div>
       </div>
     </>
