@@ -23,6 +23,14 @@ body{
     height: 200px;
 }
 
+.InfoText-BeginButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    line-height: 0;
+}
+
 .EndScreen{
     display: flex;
     flex-direction: column;

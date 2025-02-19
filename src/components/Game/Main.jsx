@@ -96,13 +96,7 @@ function GameScreen({ setScreen }) {
           <Picture p={NowPictures[2]} />
         </div>
         <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            marginTop: "20px",
-            lineHeight: "0",
-          }}
+          className="InfoText-BeginButton"
         >
           <InfoText NowScore={NowScore} NowTimes = {NowTimes} MarginScore={NowMarginScore}/>
           <BeginButton Begin={Begin} Able={ButtonAble} MarginScore = {Game.MarginScore}/>
