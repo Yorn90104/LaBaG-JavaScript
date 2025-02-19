@@ -12,11 +12,6 @@ import SuperBG from "../../assets/SuperBG.png";
 import GreenBG from "../../assets/GreenBG.png";
 import KachuBG from "../../assets/KachuBG.png";
 
-import Title from "../../assets/Title.png";
-import SuperTitle from "../../assets/SuperTitle.png";
-import GreenTitle from "../../assets/GreenTitle.png";
-import KachuTitle from "../../assets/KachuTitle.png";
-
 import QST from "../../assets/QST.jpg";
 import SuperQST from "../../assets/SuperQST.png";
 import GreenQST from "../../assets/GreenQST.png";
@@ -41,13 +36,6 @@ const BGs = {
   SuperHHH: SuperBG,
   GreenWei: GreenBG,
   PiKaChu: KachuBG,
-};
-
-const Titles = {
-  Normal: Title,
-  SuperHHH: SuperTitle,
-  GreenWei: GreenTitle,
-  PiKaChu: KachuTitle,
 };
 
 const QSTs = {
