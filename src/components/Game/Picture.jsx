@@ -1,4 +1,3 @@
-import QST from '../../assets/QST.jpg';
 
 function Picture({p}) {
     return (

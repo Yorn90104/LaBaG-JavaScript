@@ -1,10 +1,9 @@
-import { useState } from "react";  
 
-
-function Logo({title}) {
+function Logo({src}) {
     return (
-        <img src={title} style={
-            {
+        <img src={src} style={
+            {   
+                marginTop: "25px",
                 width: "450px",
                 height: "243px",  
             }
