@@ -66,9 +66,14 @@ const Pictures = {
 };
 
 function GameScreen({ setScreen }) {
-  const [ButtonAble, setButtonAble] = useState(true);
   const [NowMode, setNowMode] = useState("Normal");
-  const [NowPictures, setNowPictures] = useState(Array(3).fill(QST));
+  const [ButtonAble, setButtonAble] = useState(true);
+
+  const [NowLP, setNowLP] = useState(QST);
+  const [NowMP, setNowMP] = useState(QST);
+  const [NowRP, setNowRP] = useState(QST);
+  const setPs = [setNowLP, setNowMP, setNowRP];
+
   const [NowScore, setNowScore] = useState(Game.Score);
   const [NowTimes, setNowTimes] = useState(Game.Times - Game.Played);
   const [NowMarginScore, setNowMarginScore] = useState(Game.MarginScore);
@@ -83,19 +88,15 @@ function GameScreen({ setScreen }) {
 
   function Begin() {
     setButtonAble(false);
-    setNowPictures(Array.from({ length: 3 }, () => QSTs[NowMode]));
+    [setNowLP, setNowMP, setNowRP].forEach((setP) => setP(QST));
     Game.Logic();
     setNowMarginScore(0);
 
     for (let i = 0; i < 3; i++) {
       setTimeout(() => {
-        setNowPictures((prevPictures) => {
-          const newPictures = [...prevPictures];
-          console.log(`更新位置 ${i} 的圖片`);
-          newPictures[i] = Pictures[Game.Ps[i].code];
-          Sound(Ding);
-          return newPictures;
-        });
+        setPs[i](Pictures[Game.Ps[i].code]);
+        console.log(`更新位置 ${i} 的圖片`);
+        Sound(Ding);
       }, 500 * (i + 1));
     }
 
@@ -121,9 +122,9 @@ function GameScreen({ setScreen }) {
       <div style={{ padding: "20px" }}>
         <Logo src={Titles[NowMode]} />
         <div className="Pictures">
-          <Picture p={NowPictures[0]} />
-          <Picture p={NowPictures[1]} />
-          <Picture p={NowPictures[2]} />
+          <Picture p={NowLP} />
+          <Picture p={NowMP} />
+          <Picture p={NowRP} />
         </div>
         <div className="InfoText-BeginButton">
           <InfoText
