@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css"
-import Home from "./components/Home/Main"
-import Game from "./components/Game/Main"
+import HomeScreen from "./components/Home/Main"
+import GameScreen from "./components/Game/Main"
 
 
 
@@ -9,8 +9,8 @@ function App() {
     const [Screen, setScreen] = useState("Home");
 	return (
 		<>
-			{Screen === "Home" && <Home setScreen = {setScreen}/>}
-			{Screen === "Game" && <Game setScreen = {setScreen}/>}
+			{Screen === "Home" && <HomeScreen setScreen = {setScreen}/>}
+			{Screen === "Game" && <GameScreen setScreen = {setScreen}/>}
 		</>
 	);
 }

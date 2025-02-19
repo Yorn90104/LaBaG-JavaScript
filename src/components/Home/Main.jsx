@@ -1,4 +1,4 @@
-function Home({setScreen}){
+function HomeScreen({setScreen}){
   return (
     <>
       <img src="/SuperCircle.png" alt="SuperCircle" onClick={() => {console.log("切換至 Game 畫面");setScreen("Game")}}/>
@@ -11,4 +11,4 @@ function Home({setScreen}){
   );
 }   
 
-export default Home;
+export default HomeScreen;
