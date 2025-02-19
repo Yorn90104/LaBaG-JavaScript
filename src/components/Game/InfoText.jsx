@@ -1,4 +1,4 @@
-function InfoText({ NowScore, NowTimes, InfoDisplay, MarginScore }) {
+function InfoText({ NowScore, NowTimes, MarginScore }) {
   return (
     <>
       {MarginScore !== 0 ? (
