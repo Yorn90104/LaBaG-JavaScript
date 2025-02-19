@@ -28,6 +28,13 @@ import Handsun from "../../assets/Handsun.jpg";
 import Kachu from "../../assets/Kachu.jpg";
 import Rrr from "../../assets/RRR.jpg";
 
+import Ding from "../../assets/Ding.mp3";
+
+function Sound(s){
+  const audio = new Audio(s);
+  audio.play();
+}
+
 const BGs = {
   Normal: BG,
   SuperHHH: SuperBG,
@@ -86,6 +93,7 @@ function GameScreen({ setScreen }) {
           const newPictures = [...prevPictures];
           console.log(`更新位置 ${i} 的圖片`);
           newPictures[i] = Pictures[Game.Ps[i].code];
+          Sound(Ding);
           return newPictures;
         });
       }, 500 * (i + 1));
