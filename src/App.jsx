@@ -11,6 +11,7 @@ function App() {
 		<>
 			{Screen === "Home" && <HomeScreen setScreen = {setScreen}/>}
 			{Screen === "Game" && <GameScreen setScreen = {setScreen}/>}
+			{Screen === "End" && <EndScreen setScreen = {setScreen}/>}
 		</>
 	);
 }

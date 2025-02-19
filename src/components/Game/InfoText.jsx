@@ -1,6 +1,14 @@
-function InfoText({ NowScore, NowTimes }) {
+function InfoText({ NowScore, NowTimes, InfoDisplay, MarginScore }) {
   return (
     <>
+      {MarginScore !== 0 ? (
+        <p style={{ color: "yellow", fontSize: "12pt" }}>
+          <b>{`+ ${MarginScore}`}</b>
+        </p>
+      ) : (
+        <p />
+      )}
+
       <p style={{ color: "white", fontSize: "16pt" }}>
         <b>目前分數: {NowScore}</b>
       </p>

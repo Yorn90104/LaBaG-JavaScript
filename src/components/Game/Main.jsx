@@ -28,6 +28,7 @@ function GameScreen({ setScreen }) {
   const [NowPictures, setNowPictures] = useState(Array(3).fill(QST));
   const [NowScore, setNowScore] = useState(Game.Score);
   const [NowTimes, setNowTimes] = useState(Game.Times - Game.Played);
+  const [NowMarginScore, setNowMarginScore] = useState(Game.MarginScore);
 
   const Titles = {
     Normal: Title,
@@ -56,6 +57,7 @@ function GameScreen({ setScreen }) {
     setButtonAble(false);
     setNowPictures(Array.from({ length: 3 }, () => QSTs[NowMode]));
     Game.Logic();
+    setNowMarginScore(0);
 
     for (let i = 0; i < 3; i++) {
       setTimeout(() => {
@@ -70,11 +72,15 @@ function GameScreen({ setScreen }) {
 
     setTimeout(() => {
       setNowMode(Game.NowMode());
+      setNowMarginScore(Game.MarginScore);
       setNowScore(Game.Score);
       setNowTimes(Game.Times - Game.Played);
     }, 3000);
 
     setTimeout(() => {
+    if (!Game.GameRunning()) {
+      setScreen("End");
+    }
     setButtonAble(true);
     }, 3500);
   }
@@ -98,8 +104,8 @@ function GameScreen({ setScreen }) {
             lineHeight: "0",
           }}
         >
-          <InfoText NowScore={NowScore} NowTimes = {NowTimes} />
-          <BeginButton Begin={Begin} Able={ButtonAble} />
+          <InfoText NowScore={NowScore} NowTimes = {NowTimes} MarginScore={NowMarginScore}/>
+          <BeginButton Begin={Begin} Able={ButtonAble} MarginScore = {Game.MarginScore}/>
         </div>
       </div>
     </>
