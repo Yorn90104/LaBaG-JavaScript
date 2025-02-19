@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css"
 import HomeScreen from "./components/Home/Main"
 import GameScreen from "./components/Game/Main"
+import EndScreen from "./components/End/Main"
 
 
 

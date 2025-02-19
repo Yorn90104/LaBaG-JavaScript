@@ -22,3 +22,11 @@ body{
     width: 150px;
     height: 200px;
 }
+
+.EndScreen{
+    display: "flex";
+    justify-content: "center";
+    align-items: "center";
+    flex-direction: "row";
+    line-height: 0.5;
+}
