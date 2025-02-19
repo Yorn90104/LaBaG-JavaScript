@@ -23,13 +23,15 @@ function MusicButton({ BgmRunning, setBgmRunning, NowMode }) {
     }
 
     if (BgmRunning) {
-      const playPromise = AudioRef.current.play();
-      console.log(`當前播放音樂: ${NowMode}`);
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
+      setTimeout(() => {
+        const playPromise = AudioRef.current.play();
+        console.log(`當前播放音樂: ${NowMode}`);
+        if (playPromise !== undefined) {
+          playPromise.catch((error) => {
           console.error("音樂播放錯誤:", error);
-        });
-      }
+          });
+        }
+      }, 100);
     }
     // useEffect 回傳的函式 會在組件卸載或 NowMode/BgmRunning 變化時執行，以清理副作用。
     return () => {
