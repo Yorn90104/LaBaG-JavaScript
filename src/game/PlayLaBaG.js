@@ -11,6 +11,7 @@ class PlayLaBaG extends LaBaG{
     Reset(){
         super.Reset();
         this.HistoryScore = 0;
+        console.log("遊戲已重置");
     }
 
     Logic(){
