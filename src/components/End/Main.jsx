@@ -9,7 +9,7 @@ function EndScreen({ setScreen }) {
           fontSize: "40px",
           color: "red",
           textShadow:
-            "-2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white"
+            "-2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white",
         }}
       >
         <b>遊戲結束！</b>
