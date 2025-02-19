@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import {useEffect, useRef} from "react";
 import Bgm from "../../assets/bgm.mp3";
 import SuperMusic from "../../assets/SuperMusic.mp3";
 import GreenMusic from "../../assets/GreenMusic.mp3";
