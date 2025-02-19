@@ -1,4 +1,4 @@
-import {useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
 import Bgm from "../../assets/bgm.mp3";
 import SuperMusic from "../../assets/SuperMusic.mp3";
 import GreenMusic from "../../assets/GreenMusic.mp3";
@@ -11,19 +11,35 @@ const Musics = {
   PiKaChu: KachuMusic,
 };
 
-function MusicButton({ BgmRunning, setBgmRunning, NowMode}) {
-  // 使用 useRef 來引用音樂播放器
-  const AudioRef = useRef(new Audio(Musics[NowMode]));
+function MusicButton({ BgmRunning, setBgmRunning, NowMode }) {
+  const AudioRef = useRef(null);
 
-  // 在音樂模式改變時，更新音樂來源
   useEffect(() => {
-    AudioRef.current.src = Musics[NowMode];
-    if (BgmRunning) {
-      AudioRef.current.play(); // 如果音樂正在播放，則開始播放新音樂
+    if (!AudioRef.current) {
+      AudioRef.current = new Audio(Musics[NowMode]);
+      AudioRef.current.loop = true; // 讓音樂循環播放
     } else {
-      AudioRef.current.pause(); // 否則暫停音樂
+      AudioRef.current.pause();
+      AudioRef.current.src = Musics[NowMode];
+      AudioRef.current.load(); // 確保新的音樂可以正常載入
     }
-  }, [NowMode, BgmRunning]); // 當 NowMode 或 BgmRunning 改變時重新載入音樂
+
+    if (BgmRunning) {
+      const playPromise = AudioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.error("音樂播放錯誤:", error);
+        });
+      }
+    }
+    // useEffect 回傳的函式 會在組件卸載或 NowMode/BgmRunning 變化時執行，以清理副作用。
+    return () => {
+      if (AudioRef.current) {
+        AudioRef.current.pause();
+        console.log("停止舊音樂")
+      }
+    };
+  }, [NowMode, BgmRunning]);
 
   return (
     <button
