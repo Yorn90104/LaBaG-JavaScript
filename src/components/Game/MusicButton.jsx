@@ -12,13 +12,11 @@ const Musics = {
 };
 
 function MusicButton({ BgmRunning, setBgmRunning, NowMode }) {
-  const AudioRef = useRef(null);
+  const AudioRef = useRef(new Audio(Musics[NowMode]));
+  AudioRef.current.loop = true; // 讓音樂循環播放
 
   useEffect(() => {
-    if (!AudioRef.current) {
-      AudioRef.current = new Audio(Musics[NowMode]);
-      AudioRef.current.loop = true; // 讓音樂循環播放
-    } else {
+    if (AudioRef.current) {
       AudioRef.current.pause();
       AudioRef.current.src = Musics[NowMode];
       AudioRef.current.load(); // 確保新的音樂可以正常載入
@@ -26,6 +24,7 @@ function MusicButton({ BgmRunning, setBgmRunning, NowMode }) {
 
     if (BgmRunning) {
       const playPromise = AudioRef.current.play();
+      console.log(`當前播放音樂: ${NowMode}`);
       if (playPromise !== undefined) {
         playPromise.catch((error) => {
           console.error("音樂播放錯誤:", error);
@@ -36,7 +35,7 @@ function MusicButton({ BgmRunning, setBgmRunning, NowMode }) {
     return () => {
       if (AudioRef.current) {
         AudioRef.current.pause();
-        console.log("停止舊音樂")
+        console.log("停止舊音樂");
       }
     };
   }, [NowMode, BgmRunning]);
