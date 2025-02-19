@@ -1,13 +1,13 @@
 import InfoText from "./InfoText";
 import AgainButton from "./AgainButton";
-import ScorePicture from "./ScorePicture";
+import ScoresPicture from "./ScoresPicture";
 
 function EndScreen({ setScreen }) {
   return (
     <div className="EndScreen">
       <InfoText />
       <AgainButton setScreen={setScreen} />
-      <ScorePicture />
+      <ScoresPicture />
     </div>
   );
 }
