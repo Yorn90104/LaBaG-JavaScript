@@ -1,4 +1,4 @@
-function BeginButton({Begin}) {
+function BeginButton({Begin, Able}) {
   return (
     <img
         src="/BeginPIC.jpg"
