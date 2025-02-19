@@ -2,12 +2,14 @@ import { useState } from "react";
 import Game from "../../game/PlayLaBaG.js";
 import BackButton from "./BackButton";
 import BeginButton from "./BeginButton.jsx";
+import Picture from "./Picture.jsx";
+import InfoText from "./InfoText.jsx";
+
 import Logo from "./Logo";
 import Title from "../../assets/Title.png";
 import SuperTitle from "../../assets/SuperTitle.png";
 import GreenTitle from "../../assets/GreenTitle.png";
 import KachuTitle from "../../assets/KachuTitle.png";
-import Picture from "./Picture.jsx";
 import QST from "../../assets/QST.jpg";
 import SuperQST from "../../assets/SuperQST.png";
 import GreenQST from "../../assets/GreenQST.png";
@@ -65,11 +67,13 @@ function GameScreen({ setScreen }) {
         });
       }, 500 * (i + 1));
     }
+
     setTimeout(() => {
       setNowMode(Game.NowMode());
       setNowScore(Game.Score);
       setNowTimes(Game.Times - Game.Played);
     }, 3000);
+
     setTimeout(() => {
     setButtonAble(true);
     }, 3500);
@@ -94,12 +98,7 @@ function GameScreen({ setScreen }) {
             lineHeight: "0",
           }}
         >
-          <p style={{ color: "white", fontSize: "16pt" }}>
-            <b>目前分數: {NowScore}</b>
-          </p>
-          <p style={{ color: "white", fontSize: "16pt" }}>
-            <b>剩餘次數: {NowTimes}</b>
-          </p>
+          <InfoText NowScore={NowScore} NowTimes = {NowTimes} />
           <BeginButton Begin={Begin} Able={ButtonAble} />
         </div>
       </div>
