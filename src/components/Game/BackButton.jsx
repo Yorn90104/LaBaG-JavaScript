@@ -1,9 +1,10 @@
-function BackButton({ setScreen }) {
+function BackButton({ setScreen , setBgmRunning}) {
   return (
     <img
       src="/back.png"
       alt="返回首頁"
       onClick={() => {
+        setBgmRunning(false);
         console.log("切換至 Home 畫面");
         setScreen("Home");
       }}

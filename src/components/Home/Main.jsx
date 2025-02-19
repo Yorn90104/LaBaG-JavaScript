@@ -16,15 +16,15 @@ function HomeScreen({ setScreen }) {
           IntoGame();
         }}
       />
-      <h1
+      <p
         style={{
           textAlign: "center",
-          fontSize: "20px",
+          fontSize: "25px",
           color: "white",
         }}
       >
-        請點擊上方圖片進入遊戲
-      </h1>
+        <b>請點擊上方圖片進入遊戲</b>
+      </p>
     </>
   );
 }

@@ -26,7 +26,7 @@ import Rrr from "../../assets/RRR.jpg";
 
 import Ding from "../../assets/Ding.mp3";
 
-function Sound(s){
+function Sound(s) {
   const audio = new Audio(s);
   audio.play();
 }
@@ -78,7 +78,9 @@ function GameScreen({ setScreen }) {
 
   function Begin() {
     setButtonAble(false);
-    [setNowLP, setNowMP, setNowRP].forEach((setP) => setP(QSTs[Game.NowMode()]));
+    [setNowLP, setNowMP, setNowRP].forEach((setP) =>
+      setP(QSTs[Game.NowMode()])
+    );
     Game.Logic();
     setNowMarginScore(0);
 
@@ -91,8 +93,11 @@ function GameScreen({ setScreen }) {
     }
 
     setTimeout(() => {
-      setNowMode(Game.NowMode());
-      document.body.style.backgroundImage = `url(${BGs[Game.NowMode()]})`;
+      if (Game.NowMode() !== NowMode) {
+        setNowMode(Game.NowMode());
+        document.body.style.backgroundImage = `url(${BGs[NowMode]})`;
+      }
+
       setNowMarginScore(Game.MarginScore);
       setNowScore(Game.Score);
       setNowTimes(Game.Times - Game.Played);
@@ -109,8 +114,8 @@ function GameScreen({ setScreen }) {
 
   return (
     <>
-      <BackButton setScreen={setScreen} />
-      <div style={{height: "100vh"}}>
+      <BackButton setScreen={setScreen} setBgmRunning={setBgmRunning} />
+      <div style={{ height: "100vh" }}>
         <Logo NowMode={NowMode} />
         <div className="Pictures">
           <Picture p={NowLP} />
@@ -123,13 +128,13 @@ function GameScreen({ setScreen }) {
             NowTimes={NowTimes}
             MarginScore={NowMarginScore}
           />
-          <BeginButton
-            Begin={Begin}
-            Able={ButtonAble}
-            MarginScore={Game.MarginScore}
-          />
+          <BeginButton Begin={Begin} Able={ButtonAble} />
         </div>
-        <MusicButton BgmRunning={BgmRunning} setBgmRunning={setBgmRunning} NowMode={NowMode}/>
+        <MusicButton
+          BgmRunning={BgmRunning}
+          setBgmRunning={setBgmRunning}
+          NowMode={NowMode}
+        />
       </div>
     </>
   );
