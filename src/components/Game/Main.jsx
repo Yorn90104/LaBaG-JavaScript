@@ -61,8 +61,8 @@ function GameScreen({ setScreen }) {
 
     for (let i = 0; i < 3; i++) {
       setTimeout(() => {
-        setNowPictures((NowPictures) => {
-          const newPictures = [...NowPictures];
+        setNowPictures((prevPictures) => {
+          const newPictures = [...prevPictures];
           console.log(`更新位置 ${i} 的圖片`);
           newPictures[i] = Pictures[Game.Ps[i].code];
           return newPictures;
