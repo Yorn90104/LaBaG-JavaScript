@@ -58,7 +58,6 @@ const Pictures = {
   F: Rrr,
 };
 
-
 function GameScreen({ setScreen }) {
   const [ButtonAble, setButtonAble] = useState(true);
   const [NowMode, setNowMode] = useState("Normal");
@@ -75,7 +74,6 @@ function GameScreen({ setScreen }) {
     };
   }, [NowMode]); // **當 nowMode 改變時，執行 useEffect**
 
-  
   function Begin() {
     setButtonAble(false);
     setNowPictures(Array.from({ length: 3 }, () => QSTs[NowMode]));
@@ -102,10 +100,10 @@ function GameScreen({ setScreen }) {
     }, 3000);
 
     setTimeout(() => {
-    if (!Game.GameRunning()) {
-      setScreen("End");
-    }
-    setButtonAble(true);
+      if (!Game.GameRunning()) {
+        setScreen("End");
+      }
+      setButtonAble(true);
     }, 3500);
   }
 
@@ -119,11 +117,17 @@ function GameScreen({ setScreen }) {
           <Picture p={NowPictures[1]} />
           <Picture p={NowPictures[2]} />
         </div>
-        <div
-          className="InfoText-BeginButton"
-        >
-          <InfoText NowScore={NowScore} NowTimes = {NowTimes} MarginScore={NowMarginScore}/>
-          <BeginButton Begin={Begin} Able={ButtonAble} MarginScore = {Game.MarginScore}/>
+        <div className="InfoText-BeginButton">
+          <InfoText
+            NowScore={NowScore}
+            NowTimes={NowTimes}
+            MarginScore={NowMarginScore}
+          />
+          <BeginButton
+            Begin={Begin}
+            Able={ButtonAble}
+            MarginScore={Game.MarginScore}
+          />
         </div>
       </div>
     </>

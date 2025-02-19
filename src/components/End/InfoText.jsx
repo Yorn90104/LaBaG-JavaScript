@@ -4,7 +4,7 @@ function InfoText() {
     <>
       <p
         style={{
-          fontSize: "40px",
+          fontSize: "50px",
           color: "red",
           textShadow:
             "-2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white",
@@ -13,7 +13,7 @@ function InfoText() {
       >
         <b>遊戲結束！</b>
       </p>
-      <p style={{ fontSize: "20px", color: "white" }}>
+      <p style={{ fontSize: "25px", color: "white" }}>
         <b>{`最終分數為: ${Game.Score}`}</b>
       </p>
     </>
