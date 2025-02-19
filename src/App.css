@@ -43,6 +43,12 @@ body {
   line-height: 0;
 }
 
+.InfoText-BeginButton > p {
+  margin: 16px;
+  font-size: 20px;
+  color: white;
+}
+
 .EndScreen {
   display: flex;
   flex-direction: column;

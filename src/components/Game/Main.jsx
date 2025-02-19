@@ -119,7 +119,7 @@ function GameScreen({ setScreen }) {
   return (
     <>
       <BackButton setScreen={setScreen} />
-      <div style={{ padding: "20px" }}>
+      <div style={{height: "100vh"}}>
         <Logo src={Titles[NowMode]} />
         <div className="Pictures">
           <Picture p={NowLP} />
