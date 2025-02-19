@@ -5,6 +5,7 @@ import BeginButton from "./BeginButton.jsx";
 import Picture from "./Picture.jsx";
 import InfoText from "./InfoText.jsx";
 import Logo from "./Logo";
+import MusicButton from "./MusicButton.jsx";
 
 import BG from "../../assets/BG.png";
 import SuperBG from "../../assets/SuperBG.png";
@@ -68,6 +69,7 @@ const Pictures = {
 function GameScreen({ setScreen }) {
   const [NowMode, setNowMode] = useState("Normal");
   const [ButtonAble, setButtonAble] = useState(true);
+  const [BgmRunning, setBgmRunning] = useState(true);
 
   const [NowLP, setNowLP] = useState(QST);
   const [NowMP, setNowMP] = useState(QST);
@@ -88,7 +90,7 @@ function GameScreen({ setScreen }) {
 
   function Begin() {
     setButtonAble(false);
-    [setNowLP, setNowMP, setNowRP].forEach((setP) => setP(QST));
+    [setNowLP, setNowMP, setNowRP].forEach((setP) => setP(QSTs[Game.NowMode()]));
     Game.Logic();
     setNowMarginScore(0);
 
@@ -110,6 +112,7 @@ function GameScreen({ setScreen }) {
 
     setTimeout(() => {
       if (!Game.GameRunning()) {
+        setBgmRunning(false);
         setScreen("End");
       }
       setButtonAble(true);
@@ -138,6 +141,7 @@ function GameScreen({ setScreen }) {
             MarginScore={Game.MarginScore}
           />
         </div>
+        <MusicButton BgmRunning={BgmRunning} setBgmRunning={setBgmRunning} NowMode={NowMode}/>
       </div>
     </>
   );
