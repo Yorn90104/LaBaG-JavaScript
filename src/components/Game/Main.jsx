@@ -44,10 +44,11 @@ function GameScreen({ setScreen }) {
             flexDirection: "column",  
             alignItems: "center",  
             marginTop: "20px",
+            lineHeight: "0",
           }}
         >
-          <p><b>目前分數: {NowScore}</b></p>
-          <p><b>剩餘次數: {NowTimes}</b></p>
+          <p style={{color: "white", fontSize: "16pt"}}><b>目前分數: {NowScore}</b></p>
+          <p style={{color: "white", fontSize: "16pt"}}><b>剩餘次數: {NowTimes}</b></p>
           <BeginButton Begin={Begin} />
         </div>
       </div>
