@@ -9,11 +9,11 @@ import EndScreen from "./components/End/Main"
 function App() {
     const [Screen, setScreen] = useState("Home");
 	return (
-		<>
+		<div className="container">
 			{Screen === "Home" && <HomeScreen setScreen = {setScreen}/>}
 			{Screen === "Game" && <GameScreen setScreen = {setScreen}/>}
 			{Screen === "End" && <EndScreen setScreen = {setScreen}/>}
-		</>
+		</div>
 	);
 }
 
