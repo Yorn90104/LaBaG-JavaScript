@@ -4,6 +4,7 @@ function BackButton({setScreen}) {
         onClick={() => {console.log("切換至 Home 畫面");setScreen("Home")}}
         style={
             {   
+                border: "3px solid white",
                 position: "absolute", 
                 top: 0,           /* 距離視窗頂部 0 */
                 left: 0,          /* 距離視窗左邊 0 */
