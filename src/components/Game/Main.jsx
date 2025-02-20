@@ -6,6 +6,7 @@ import Picture from "./Picture.jsx";
 import InfoText from "./InfoText.jsx";
 import Logo from "./Logo";
 import MusicButton from "./MusicButton.jsx";
+import PopPicture from "./PopPicture.jsx";
 
 import BG from "../../assets/BG.png";
 import SuperBG from "../../assets/SuperBG.png";
@@ -67,6 +68,7 @@ function GameScreen({ setScreen }) {
   const [NowScore, setNowScore] = useState(Game.Score);
   const [NowTimes, setNowTimes] = useState(Game.Times - Game.Played);
   const [NowMarginScore, setNowMarginScore] = useState(Game.MarginScore);
+  const [NowPOP, setNowPoP] = useState(false);
 
   // **使用 useEffect 來更新背景**
   useEffect(() => {
@@ -108,32 +110,39 @@ function GameScreen({ setScreen }) {
         setBgmRunning(false);
         setScreen("End");
       }
+      if(Game.NowMode() !== "Normal" && Game.ModeToScreen){
+        setNowPoP(true);
+      }
       setButtonAble(true);
     }, 3500);
   }
 
-  return (
+  return NowPOP ? (
+    <>
+      <PopPicture NowMode={NowMode} setNowPop={setNowPoP}/>
+    </>
+  ) : (
     <>
       <BackButton setScreen={setScreen} setBgmRunning={setBgmRunning} />
-        <Logo NowMode={NowMode} />
-        <div className="Pictures">
-          <Picture p={NowLP} />
-          <Picture p={NowMP} />
-          <Picture p={NowRP} />
-        </div>
-        <div className="InfoText-BeginButton">
-          <InfoText
-            NowScore={NowScore}
-            NowTimes={NowTimes}
-            MarginScore={NowMarginScore}
-          />
-          <BeginButton Begin={Begin} Able={ButtonAble} />
-        </div>
-        <MusicButton
-          BgmRunning={BgmRunning}
-          setBgmRunning={setBgmRunning}
-          NowMode={NowMode}
+      <Logo NowMode={NowMode} />
+      <div className="Pictures">
+        <Picture p={NowLP} />
+        <Picture p={NowMP} />
+        <Picture p={NowRP} />
+      </div>
+      <div className="InfoText-BeginButton">
+        <InfoText
+          NowScore={NowScore}
+          NowTimes={NowTimes}
+          MarginScore={NowMarginScore}
         />
+        <BeginButton Begin={Begin} Able={ButtonAble} />
+      </div>
+      <MusicButton
+        BgmRunning={BgmRunning}
+        setBgmRunning={setBgmRunning}
+        NowMode={NowMode}
+      />
     </>
   );
 }
