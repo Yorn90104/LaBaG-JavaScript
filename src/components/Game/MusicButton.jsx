@@ -48,9 +48,9 @@ function MusicButton({ BgmRunning, setBgmRunning, NowMode }) {
         setBgmRunning(!BgmRunning);
       }}
       style={{
-        position: "absolute",
-        bottom: 0,
-        right: 0,
+        position: "fixed",
+        bottom: "15px",       /* 距離畫面底部 */
+        right: "15px",        /* 距離畫面右邊 */
         width: "50px",
         height: "50px",
         fontSize: "20px",

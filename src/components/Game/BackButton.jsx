@@ -12,9 +12,9 @@ function BackButton({ setScreen , setBgmRunning}) {
       }}
       style={{
         border: "3px solid white",
-        position: "absolute",
-        top: 0 /* 距離視窗頂部 0 */,
-        left: 0 /* 距離視窗左邊 0 */,
+        position: "fixed",
+        top: "10px" /* 距離視窗頂部 */,
+        left: "10px" /* 距離視窗左邊 */,
         width: "30px",
         height: "30px",
         borderRadius: "5px",
