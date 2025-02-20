@@ -1,9 +1,10 @@
 import Game from "../../game/PlayLaBaG";
+import AgainPIC from "../../assets/AgainPIC.jpg"
 
 function AgainButton({ setScreen }) {
   return (
     <img
-      src="/images/AgainPIC.jpg"
+      src={AgainPIC}
       alt="再玩一次"
       onClick={() => {
         Game.Reset();

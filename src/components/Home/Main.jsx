@@ -1,4 +1,5 @@
 import Game from "../../game/PlayLaBaG";
+import SuperCircle from "../../assets/SuperCircle.png"
 
 function HomeScreen({ setScreen }) {
   const IntoGame = () => {
@@ -10,7 +11,7 @@ function HomeScreen({ setScreen }) {
   return (
     <>
       <img
-        src="/images/SuperCircle.png"
+        src= {SuperCircle}
         alt="SuperCircle"
         onClick={() => {
           IntoGame();

@@ -1,7 +1,9 @@
+import BeginPIC from "../../assets/BeginPIC.jpg"
+
 function BeginButton({ Begin, Able }) {
   return Able ? (
     <img
-      src="/images/BeginPIC.jpg"
+      src={BeginPIC}
       onClick={() => {
         console.log("已按下開始");
         Begin();
@@ -14,7 +16,7 @@ function BeginButton({ Begin, Able }) {
     />
   ) : (
     <img
-      src="/images/BeginPIC.jpg"
+      src={BeginPIC}
       style={{
         width: "150px",
         height: "50px",

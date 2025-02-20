@@ -1,7 +1,9 @@
+import back from "../../assets/back.png"
+
 function BackButton({ setScreen , setBgmRunning}) {
   return (
     <img
-      src="/images/back.png"
+      src={back}
       alt="返回首頁"
       onClick={() => {
         setBgmRunning(false);
