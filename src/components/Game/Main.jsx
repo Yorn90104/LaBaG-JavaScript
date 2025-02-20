@@ -203,7 +203,7 @@ function GameScreen({ setScreen }) {
             <Picture p={NowMP} />
             <Picture p={NowRP} />
           </div>
-          <div className="InfoText-BeginButton">
+          <div className="InfoText">
             <InfoText
               Score={NowScore}
               Times={NowTimes}
@@ -211,8 +211,8 @@ function GameScreen({ setScreen }) {
               NowMode={NowMode}
               ModeTimes={NowModeTimes}
             />
-            <BeginButton Begin={Begin} Able={ButtonAble} />
           </div>
+            <BeginButton Begin={Begin} Able={ButtonAble} />
         </>
       )}
 
