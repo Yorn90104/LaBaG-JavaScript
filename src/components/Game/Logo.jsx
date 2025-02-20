@@ -16,7 +16,6 @@ function Logo({ NowMode }) {
       src={Titles[NowMode]}
       alt="Logo"
       style={{
-        marginTop: "25px",
         width: "450px",
         height: "243px",
       }}

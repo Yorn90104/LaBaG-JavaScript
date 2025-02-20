@@ -77,6 +77,8 @@ function GameScreen({ setScreen }) {
   const [NowScore, setNowScore] = useState(Game.Score);
   const [NowTimes, setNowTimes] = useState(Game.Times - Game.Played);
   const [NowMarginScore, setNowMarginScore] = useState(Game.MarginScore);
+  const [NowDoubleScore, setNowDoubleScore] = useState(Game.DoubleScore);
+  const [NowGssNum, setNowGssNum] = useState(Game.GssNum);
   const [NowModeTimes, setNowModeTimes] = useState(0);
   const [NowPOP, setNowPoP] = useState(false);
 
@@ -94,6 +96,7 @@ function GameScreen({ setScreen }) {
         setP(QSTs[Game.NowMode()])
       );
       setNowMarginScore(0);
+      setNowDoubleScore(0);
     };
     const change_picture_per500ms = () => {
       for (let i = 0; i < 3; i++) {
@@ -146,8 +149,10 @@ function GameScreen({ setScreen }) {
     };
     const info_text = () => {
       setNowMarginScore(Game.MarginScore);
+      setNowDoubleScore(Game.DoubleScore);
       setNowScore(Game.Score);
       setNowTimes(Game.Times - Game.Played);
+      setNowGssNum(Game.GssNum);
       const Mode = Game.NowMode()
       switch(Mode){
         case "SuperHHH":
@@ -208,6 +213,8 @@ function GameScreen({ setScreen }) {
               Score={NowScore}
               Times={NowTimes}
               MarginScore={NowMarginScore}
+              DoubleScore ={NowDoubleScore}
+              GssNum={NowGssNum}
               NowMode={NowMode}
               ModeTimes={NowModeTimes}
             />
