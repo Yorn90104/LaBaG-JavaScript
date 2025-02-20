@@ -12,7 +12,6 @@ function BeginButton({ Begin, Able }) {
         width: "150px",
         height: "50px",
         cursor: "pointer",
-        margin: "10px"
       }}
     />
   ) : (
@@ -21,7 +20,6 @@ function BeginButton({ Begin, Able }) {
       style={{
         width: "150px",
         height: "50px",
-        margin: "10px",
         filter: "grayscale(100%)",
       }}
     />
