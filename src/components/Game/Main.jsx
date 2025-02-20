@@ -115,7 +115,6 @@ function GameScreen({ setScreen }) {
   return (
     <>
       <BackButton setScreen={setScreen} setBgmRunning={setBgmRunning} />
-      <div style={{ height: "100vh" }}>
         <Logo NowMode={NowMode} />
         <div className="Pictures">
           <Picture p={NowLP} />
@@ -135,7 +134,6 @@ function GameScreen({ setScreen }) {
           setBgmRunning={setBgmRunning}
           NowMode={NowMode}
         />
-      </div>
     </>
   );
 }

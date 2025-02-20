@@ -29,14 +29,14 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 10px; /* 增加圖片之間的間距 */
+  gap: 0px; /* 增加圖片之間的間距 */
 }
 
 .Pictures > img {
-  width: 150px;
-  height: 200px;
+  width: 180px;
+  height: auto;
   object-fit: contain; /* 讓圖片按比例縮放 */
-  padding: 0;
+
 }
 
 .InfoText-BeginButton {
@@ -65,9 +65,8 @@ body {
 /* 響應式設計 */
 @media (max-width: 768px) {
   .Pictures > img {
-    width: 120px;
-    height: 160px;
-    padding: 0;
+    width: 30%;
+    height: auto;
     object-fit: contain; /* 讓圖片按比例縮放 */
   }
   .InfoText-BeginButton > p {
