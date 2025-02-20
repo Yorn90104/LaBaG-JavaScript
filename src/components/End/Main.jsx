@@ -4,7 +4,7 @@ import ScoresPicture from "./ScoresPicture";
 
 function EndScreen({ setScreen }) {
   return (
-    <div className="EndScreen">
+    <div className="Screen">
       <InfoText />
       <AgainButton setScreen={setScreen} />
       <ScoresPicture />

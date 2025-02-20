@@ -1,4 +1,4 @@
-import SB from "../../assets/SB.png"
+import SB from "../../assets/SB.jpg"
 function ScoresPicture() {
   return (
     <>

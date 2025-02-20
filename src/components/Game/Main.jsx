@@ -8,15 +8,15 @@ import Logo from "./Logo";
 import MusicButton from "./MusicButton.jsx";
 import PopPicture from "./PopPicture.jsx";
 
-import BG from "../../assets/BG.png";
-import SuperBG from "../../assets/SuperBG.png";
-import GreenBG from "../../assets/GreenBG.png";
-import KachuBG from "../../assets/KachuBG.png";
+import BG from "../../assets/BG.jpg";
+import SuperBG from "../../assets/SuperBG.jpg";
+import GreenBG from "../../assets/GreenBG.jpg";
+import KachuBG from "../../assets/KachuBG.jpg";
 
 import QST from "../../assets/QST.jpg";
-import SuperQST from "../../assets/SuperQST.png";
-import GreenQST from "../../assets/GreenQST.png";
-import KachuQST from "../../assets/KachuQST.png";
+import SuperQST from "../../assets/SuperQST.jpg";
+import GreenQST from "../../assets/GreenQST.jpg";
+import KachuQST from "../../assets/KachuQST.jpg";
 
 import Gss from "../../assets/Gss.jpg";
 import Hhh from "../../assets/Hhh.jpg";

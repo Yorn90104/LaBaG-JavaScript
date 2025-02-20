@@ -1,4 +1,4 @@
-import back from "../../assets/back.png"
+import back from "../../assets/back.jpg"
 
 function BackButton({ setScreen , setBgmRunning}) {
   return (

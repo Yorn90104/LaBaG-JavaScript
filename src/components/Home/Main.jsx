@@ -9,7 +9,7 @@ function HomeScreen({ setScreen }) {
   };
 
   return (
-    <>
+    <div className="Screen">
       <img
         src= {SuperCircle}
         alt="SuperCircle"
@@ -26,7 +26,7 @@ function HomeScreen({ setScreen }) {
       >
         <b>請點擊上方圖片進入遊戲</b>
       </p>
-    </>
+    </div>
   );
 }
 

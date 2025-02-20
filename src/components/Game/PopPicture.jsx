@@ -1,6 +1,6 @@
-import SuperPOP from "../../assets/SuperPOP.png";
-import GreenPOP from "../../assets/GreenPOP.png";
-import KachuPOP from "../../assets/KachuPOP.png";
+import SuperPOP from "../../assets/SuperPOP.jpg";
+import GreenPOP from "../../assets/GreenPOP.jpg";
+import KachuPOP from "../../assets/KachuPOP.jpg";
 
 const POPs = {
   SuperHHH: SuperPOP,
