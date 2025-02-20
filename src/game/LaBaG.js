@@ -316,7 +316,7 @@ export class LaBaG{
             case "GreenWei":
                 this.GreenTimes -= 1;
 
-                if (this.Ps.every(p => p.code === "B")){
+                if (this.Ps.every(p => p.code === "A")){
                     this.GreenTimes += 1;
                 }
                 if (this.GreenTimes <= 0){
