@@ -1,11 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// 檢查是否是 GitHub Pages 環境
-const isGitHubPages = process.env.NODE_ENV === 'production';
-
+// 設定 GitHub Pages 正確的 Base 路徑
 export default defineConfig({
-  base: isGitHubPages ? "/LaBaG-JavaScript/" : "/", // 部署用倉庫名稱，本地開發用 "/"
   build: {
     outDir: "dist"
   },
