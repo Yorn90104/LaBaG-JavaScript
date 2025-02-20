@@ -77,6 +77,7 @@ function GameScreen({ setScreen }) {
   const [NowScore, setNowScore] = useState(Game.Score);
   const [NowTimes, setNowTimes] = useState(Game.Times - Game.Played);
   const [NowMarginScore, setNowMarginScore] = useState(Game.MarginScore);
+  const [NowModeTimes, setNowModeTimes] = useState(0);
   const [NowPOP, setNowPoP] = useState(false);
 
   // **使用 useEffect 來更新背景**
@@ -147,6 +148,18 @@ function GameScreen({ setScreen }) {
       setNowMarginScore(Game.MarginScore);
       setNowScore(Game.Score);
       setNowTimes(Game.Times - Game.Played);
+      const Mode = Game.NowMode()
+      switch(Mode){
+        case "SuperHHH":
+          setNowModeTimes(Game.SuperTimes);
+          break;
+        case "GreenWei":
+          setNowModeTimes(Game.GreenTimes);
+          break;
+        case "PiKaChu":
+          setNowModeTimes(Game.KachuTimes);
+          break;
+      }
     };
 
     setButtonAble(false);
@@ -192,9 +205,11 @@ function GameScreen({ setScreen }) {
           </div>
           <div className="InfoText-BeginButton">
             <InfoText
-              NowScore={NowScore}
-              NowTimes={NowTimes}
+              Score={NowScore}
+              Times={NowTimes}
               MarginScore={NowMarginScore}
+              NowMode={NowMode}
+              ModeTimes={NowModeTimes}
             />
             <BeginButton Begin={Begin} Able={ButtonAble} />
           </div>
