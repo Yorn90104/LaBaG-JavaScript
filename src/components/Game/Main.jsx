@@ -80,6 +80,7 @@ function GameScreen({ setScreen }) {
 
   function Begin() {
     setButtonAble(false);
+    
     [setNowLP, setNowMP, setNowRP].forEach((setP) =>
       setP(QSTs[Game.NowMode()])
     );
@@ -110,34 +111,37 @@ function GameScreen({ setScreen }) {
         setBgmRunning(false);
         setScreen("End");
       }
-      if(Game.NowMode() !== "Normal" && Game.ModeToScreen){
+      if (Game.NowMode() !== "Normal" && Game.ModeToScreen) {
         setNowPoP(true);
       }
       setButtonAble(true);
     }, 3500);
   }
 
-  return NowPOP ? (
-    <>
-      <PopPicture NowMode={NowMode} setNowPop={setNowPoP}/>
-    </>
-  ) : (
+  return (
     <>
       <BackButton setScreen={setScreen} setBgmRunning={setBgmRunning} />
-      <Logo NowMode={NowMode} />
-      <div className="Pictures">
-        <Picture p={NowLP} />
-        <Picture p={NowMP} />
-        <Picture p={NowRP} />
-      </div>
-      <div className="InfoText-BeginButton">
-        <InfoText
-          NowScore={NowScore}
-          NowTimes={NowTimes}
-          MarginScore={NowMarginScore}
-        />
-        <BeginButton Begin={Begin} Able={ButtonAble} />
-      </div>
+      {NowPOP ? (
+        <PopPicture NowMode={NowMode} setNowPoP={setNowPoP} />
+      ) : (
+        <>
+          <Logo NowMode={NowMode} />
+          <div className="Pictures">
+            <Picture p={NowLP} />
+            <Picture p={NowMP} />
+            <Picture p={NowRP} />
+          </div>
+          <div className="InfoText-BeginButton">
+            <InfoText
+              NowScore={NowScore}
+              NowTimes={NowTimes}
+              MarginScore={NowMarginScore}
+            />
+            <BeginButton Begin={Begin} Able={ButtonAble} />
+          </div>
+        </>
+      )}
+
       <MusicButton
         BgmRunning={BgmRunning}
         setBgmRunning={setBgmRunning}

@@ -8,18 +8,19 @@ const POPs = {
   PiKaChu: KachuPOP,
 };
 
-function PopPicture({ NowMode, setNowPop }) {
+function PopPicture({ NowMode, setNowPoP }) {
   return (
     <>
       <img
         onClick={() => {
-          setNowPop(false);
+          setNowPoP(false);
         }}
         src={POPs[NowMode]}
         style={{
           height: "100vh",
           width: "auto",
           objectFit: "contain", /* 保持完整顯示 */
+          cursor: "pointer"
         }}
       />
     </>
