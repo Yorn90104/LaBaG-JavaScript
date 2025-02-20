@@ -65,8 +65,8 @@ body {
 /* 響應式設計 */
 @media (max-width: 768px) {
   .Pictures > img {
-    width: 100px;
-    height: 150px;
+    width: 120px;
+    height: 160px;
     padding: 0;
     object-fit: contain; /* 讓圖片按比例縮放 */
   }
