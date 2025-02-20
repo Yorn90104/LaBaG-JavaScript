@@ -10,7 +10,7 @@ function HomeScreen({ setScreen }) {
   return (
     <>
       <img
-        src="/SuperCircle.png"
+        src="/images/SuperCircle.png"
         alt="SuperCircle"
         onClick={() => {
           IntoGame();

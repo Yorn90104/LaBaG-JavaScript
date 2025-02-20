@@ -1,7 +1,7 @@
 function BeginButton({ Begin, Able }) {
   return Able ? (
     <img
-      src="/BeginPIC.jpg"
+      src="/images/BeginPIC.jpg"
       onClick={() => {
         console.log("已按下開始");
         Begin();
@@ -14,7 +14,7 @@ function BeginButton({ Begin, Able }) {
     />
   ) : (
     <img
-      src="/BeginPIC.jpg"
+      src="/images/BeginPIC.jpg"
       style={{
         width: "150px",
         height: "50px",

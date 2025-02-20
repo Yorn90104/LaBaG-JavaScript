@@ -1,7 +1,7 @@
 function BackButton({ setScreen , setBgmRunning}) {
   return (
     <img
-      src="/back.png"
+      src="/images/back.png"
       alt="返回首頁"
       onClick={() => {
         setBgmRunning(false);

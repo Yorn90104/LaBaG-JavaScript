@@ -3,7 +3,7 @@ import Game from "../../game/PlayLaBaG";
 function AgainButton({ setScreen }) {
   return (
     <img
-      src="/AgainPIC.jpg"
+      src="/images/AgainPIC.jpg"
       alt="再玩一次"
       onClick={() => {
         Game.Reset();

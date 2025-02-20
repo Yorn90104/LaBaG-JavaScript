@@ -54,7 +54,7 @@ function MusicButton({ BgmRunning, setBgmRunning, NowMode }) {
         width: "50px",
         height: "50px",
         fontSize: "20px",
-        borderRadius: "5%",
+        borderRadius: "10%",
         cursor: "pointer",
         border: "3px solid black",
         backgroundColor: BgmRunning ? "#00FF00" : "#F0F0F0",
