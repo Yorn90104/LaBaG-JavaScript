@@ -43,7 +43,7 @@ function InfoText({
       <p>
         <b>剩餘次數: {Times}</b>
       </p>
-      <p style={{ color: "#00FF00" }}>
+      <p style={{ color: "#00FFFF" }}>
         <b>咖波累積數: {GssNum}</b>
       </p>
       {ModeTimes !== 0 ? (
