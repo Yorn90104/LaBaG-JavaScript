@@ -22,6 +22,7 @@ function HomeScreen({ setScreen }) {
           textAlign: "center",
           fontSize: "25px",
           color: "white",
+          cursor: "pointer"
         }}
       >
         <b>請點擊上方圖片進入遊戲</b>
